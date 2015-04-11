@@ -40,3 +40,7 @@ gulp.task('html', function(){
 		}))
 	.pipe(gulp.dest('dist'));
 	});
+
+
+//join tasks
+gulp.task('minify', ['html', 'style', 'js']);
