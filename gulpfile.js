@@ -41,6 +41,15 @@ gulp.task('html', function(){
 	.pipe(gulp.dest('dist'));
 	});
 
+//Run tasks when do changes in files
+gulp.task('watch', function(){
+	gulp.watch('js/**/*.*',['js']);
+	gulp.watch('styles/**/*.*',['style']);
+	gulp.watch('index.html',['html']);
+});
+
+//Default task
+gulp.task('default', ['watch']);
 
 //join tasks
 gulp.task('minify', ['html', 'style', 'js']);
