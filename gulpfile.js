@@ -2,11 +2,11 @@ var gulp = require('gulp');
 
 var concat 	= require('gulp-concat');
 var uglify  = require('gulp-uglify');
+var stylus 	= require('gulp-stylus');
 
-
-//DEFINE TASK
+//DEFINE TASKS
 //============
-//our first task
+//js task
 gulp.task('js', function() {
 	//source files
 	gulp.src('js/**/*.*')
@@ -17,4 +17,14 @@ gulp.task('js', function() {
 	.pipe(gulp.dest('dist/js'))
 });
 
+//Stylus task
+gulp.task('style', function() {
+	gulp.src('styles/**/*.*')
+	.pipe(stylus({
+		//compress stylus
+		compress: true
+		}))
+	.pipe(concat('main.css'))
+	.pipe(gulp.dest('dist/'));
+})
 
