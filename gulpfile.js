@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var concat 	= require('gulp-concat');
 var uglify  = require('gulp-uglify');
 var stylus 	= require('gulp-stylus');
+var htmlmin = require('gulp-htmlmin');
 
 //DEFINE TASKS
 //============
@@ -28,3 +29,14 @@ gulp.task('style', function() {
 	.pipe(gulp.dest('dist/'));
 })
 
+//HTML Task
+gulp.task('html', function(){
+	gulp.src('index.html')
+	.pipe(htmlmin({
+		collapseWhitespace: true,
+		removeComments: true,
+		minifyURLs: true,
+		minifyJS: true
+		}))
+	.pipe(gulp.dest('dist'));
+	});
