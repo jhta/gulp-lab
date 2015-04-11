@@ -6,6 +6,7 @@ Install Gulp:
 	npm install -g gulp
 	
 Install Dependences:
+
 	npm install
 	
 You can watch the commits list with all steps.
